@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>进制转换计算器</title>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8">
+		</script>
+	</head>
+	<body background="img/xin.jpg">
+		<div align="center" class="toolName" style="font-size: 40px;">进制转换计算器</div>
+		<div id="app">
+		<div align="center">二进制数值：<input type="text" v-model="b"/><input type="button" value="转换" @click="bto()"/><br>
+		八进制数值：<input type="text" v-model="o"/><input type="button" value="转换" @click="oto()"/><br>
+		十进制数值：<input type="text" v-model="d"/><input type="button" value="转换" @click="dto()"/><br>
+		16进制数值：<input type="text" v-model="h"/><input type="button" value="转换" @click="hto()"/><br>
+		</div>
+		</div>
+		<script>
+			let v=new Vue({
+				el:"#app",
+				data:{
+					b:0,
+					o:0,
+					d:0,
+					h:0,
+					name:"dfs"
+				},
+				methods:{
+					bto(){
+						var a=parseInt(v.b,2);
+						v.o=a.toString(8);
+						v.d=a;
+						v.h=a.toString(16);
+					},
+					oto(){
+						var a=parseInt(v.o,8);
+						v.b=a.toString(2);
+						v.d=a;
+						v.h=a.toString(16);
+					},
+					dto(){
+						var a=parseInt(v.d,10);
+						v.b=a.toString(2);
+						v.o=a.toString(8);
+						v.h=a.toString(16);
+					},
+					hto(){
+						var a=parseInt(v.h,16);
+						v.o=a.toString(8);
+						v.d=a;
+						v.b=a.toString(2);
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>
