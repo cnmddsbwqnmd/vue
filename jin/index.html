@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>多进制转换器</title>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8">
+		</script>
+	</head>
+	<body background="./img/1582085731899.png" style="color: white;">
+		<div align="center" class="toolName" style="font-size: 40px;"></div>
+		<div id="app">
+		<div align="center">
+			2进制数值：<input type="text" v-model="num2_2"/>
+			8进制数值：<input type="text" v-model="num2_8"/>
+			10进制数值：<input type="text" v-model="num2_10"/>
+			16进制数值：<input type="text" v-model="num2_16"/>
+			<input type="button" value="转换" @click="r2()"/>
+			<br>
+			<br>
+			<br>
+			<br>
+			2进制数值：<input type="text" v-model="num8_2"/>
+			8进制数值：<input type="text" v-model="num8_8"/>
+			10进制数值：<input type="text" v-model="num8_10"/>
+			16进制数值：<input type="text" v-model="num8_16"/>
+			<input type="button" value="转换" @click="r8()"/>
+			<br>
+			<br>
+			<br>
+			<br>
+			2进制数值：<input type="text" v-model="num10_2"/>
+			8进制数值：<input type="text" v-model="num10_8"/>
+			10进制数值：<input type="text" v-model="num10_10"/>
+			16进制数值：<input type="text" v-model="num10_16"/>
+			<input type="button" value="转换" @click="r10()"/>
+			<br>
+			<br>
+			<br>
+			<br>
+			2进制数值：<input type="text" v-model="num16_2"/>
+			8进制数值：<input type="text" v-model="num16_8"/>
+			10进制数值：<input type="text" v-model="num16_10"/>
+			16进制数值：<input type="text" v-model="num16_16"/>
+			<input type="button" value="转换" @click="r16()"/>
+		</div>
+		</div>
+		<script>
+			let v=new Vue({
+				el:"#app",
+				data:{
+					num2_2:0,
+					num2_8:0,
+					num2_10:0,
+					num2_16:0,
+					num8_2:0,
+					num8_8:0,
+					num8_10:0,
+					num8_16:0,
+					num10_2:0,
+					num10_8:0,
+					num10_10:0,
+					num10_16:0,
+					num16_2:0,
+					num16_8:0,
+					num16_10:0,
+					num16_16:0,
+					name:"dfs"
+				},
+				methods:{
+					r2(){
+						var a=parseInt(this.num2_2,2);
+						this.num2_8=a.toString(8);
+						this.num2_10=a;
+						this.num2_16=a.toString(16);
+					},
+					r8(){
+						var a=parseInt(this.num8_8,8);
+						this.num8_2=a.toString(2);
+						this.num8_10=a;
+						this.num8_16=a.toString(16);
+					},
+					r10(){
+						var a=parseInt(this.num10_10,10);
+						this.num10_2=a.toString(2);
+						this.num10_8=a.toString(8);
+						this.num10_16=a.toString(16);
+					},
+					r16(){
+						var a=parseInt(this.num16_16,16);
+						this.num16_8=a.toString(8);
+						this.num16_10=a;
+						this.num16_2=a.toString(2);
+					}
+				}
+			})
+			
+		</script>
+	</body>
+</html>
